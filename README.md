@@ -1,5 +1,11 @@
 # postgresql
 
+
+## Docker image
+```
+docker run -d --name postgres -e POSTGRES_PASSWORD=mysecretpassword   -v $PWD/data:/var/lib/postgresql/data postgres:latest
+```
+
 ## Commands
 * Create a DB
 ```
@@ -53,6 +59,22 @@ GRANT
 CREATE DATABASE yourdbname;
 CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
 GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
+```
+
+## Create a users table for tests
+```
+guru99=# CREATE TABLE users(
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    PRIMARY KEY(id),
+    hash_firstname TEXT NOT NULL,
+    hash_lastname TEXT NOT NULL,
+    gender VARCHAR(6) NOT NULL CHECK (gender IN ('male', 'female'))
+);
+CREATE TABLE
+
+
+INSERT INTO users(hash_firstname, hash_lastname, gender) SELECT md5(RANDOM()::TEXT), md5(RANDOM()::TEXT), CASE WHEN RANDOM() < 0.5 THEN 'male' ELSE 'female' END FROM generate_series(1, 10000);
+INSERT 0 10000
 ```
 
 
