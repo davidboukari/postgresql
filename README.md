@@ -5,6 +5,8 @@
 ```
 mkdir data
 docker run -d --name postgres -e POSTGRES_PASSWORD=mysecretpassword   -v $PWD/data:/var/lib/postgresql/data  -p 9020:5432  postgres:latest
+
+docker exec -it postgres /bin/bash
 apt-get update
 apt-get install procps
 
