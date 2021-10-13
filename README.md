@@ -4,7 +4,7 @@
 ## Docker image
 ```
 mkdir data
-docker run -d --name postgres -e POSTGRES_PASSWORD=mysecretpassword   -v $PWD/data:/var/lib/postgresql/data postgres:latest
+docker run -d --name -e POSTGRES_PASSWORD=mysecretpassword   -v $PWD/data:/var/lib/postgresql/data postgres:latest
 ```
 
 ## Connexion
