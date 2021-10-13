@@ -138,3 +138,6 @@ WHERE schemaname != 'pg_catalog' AND
 
 * https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-184/Configurer-la-replication-d-un-serveur-PostgreSQL
 
+## php
+* https://phpdelusions.net/pdo_examples/select
+
