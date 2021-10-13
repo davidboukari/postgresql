@@ -57,7 +57,20 @@ You are now connected to database "guru99" as user "postgres".
 ```
 create user guru99;
 CREATE ROLE
+```
 
+* List users
+```
+guru99=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ guru99    |                                                            | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+```
+
+
+```
 guru99=# \l
                                  List of databases
    Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
