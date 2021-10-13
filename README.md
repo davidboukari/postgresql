@@ -109,6 +109,27 @@ CREATE TABLE
 INSERT INTO users(hash_firstname, hash_lastname, gender) SELECT md5(RANDOM()::TEXT), md5(RANDOM()::TEXT), CASE WHEN RANDOM() < 0.5 THEN 'male' ELSE 'female' END FROM generate_series(1, 10000);
 INSERT 0 10000
 ```
+* List tables
+```
+guru99=# \dt
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | users | table | postgres
+(1 row)
+
+guru99=# SELECT *
+FROM pg_catalog.pg_tables
+WHERE schemaname != 'pg_catalog' AND
+    schemaname != 'guru99';
+     schemaname     |        tablename        | tableowner | tablespace | hasindexes | hasrules | hastriggers | rowsecurity
+--------------------+-------------------------+------------+------------+------------+----------+-------------+-------------
+ public             | users                   | postgres   |            | t          | f        | f           | f
+ information_schema | sql_parts               | postgres   |            | f          | f        | f           | f
+ information_schema | sql_implementation_info | postgres   |            | f          | f        | f           | f
+ information_schema | sql_features            | postgres   |            | f          | f        | f           | f
+ information_schema | sql_sizing              | postgres   |            | f          | f        | f           | f
+```
 
 
 ## Replication & Failover
