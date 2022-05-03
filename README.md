@@ -147,3 +147,6 @@ WHERE schemaname != 'pg_catalog' AND
 
 ## Test DB
 * https://github.com/h8/employees-database/blob/master/employees_schema.sql
+
+## Connexion
+* https://docs.aws.amazon.com/fr_fr/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html
