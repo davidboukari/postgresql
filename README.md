@@ -141,3 +141,6 @@ WHERE schemaname != 'pg_catalog' AND
 ## php
 * https://phpdelusions.net/pdo_examples/select
 
+## AWS RDS Postgres free tier
+
+* https://aws.amazon.com/fr/premiumsupport/knowledge-center/free-tier-rds-launch/
