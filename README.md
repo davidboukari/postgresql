@@ -150,3 +150,6 @@ WHERE schemaname != 'pg_catalog' AND
 
 ## Connexion
 * https://docs.aws.amazon.com/fr_fr/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html
+
+## Manage roles & permissions
+* https://aws.amazon.com/fr/blogs/database/managing-postgresql-users-and-roles/
