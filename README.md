@@ -145,6 +145,8 @@ WHERE schemaname != 'pg_catalog' AND
 
 * https://aws.amazon.com/fr/premiumsupport/knowledge-center/free-tier-rds-launch/
 
+* AWS connexion: https://aws.amazon.com/fr/premiumsupport/knowledge-center/users-connect-rds-iam/
+
 ## Test DB
 * https://github.com/h8/employees-database/blob/master/employees_schema.sql
 
