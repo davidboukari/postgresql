@@ -158,3 +158,4 @@ WHERE schemaname != 'pg_catalog' AND
 
 ## Connect IAM user to RDS Postgres
 * https://aws.amazon.com/fr/premiumsupport/knowledge-center/rds-postgresql-connect-using-iam/
+* https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html
