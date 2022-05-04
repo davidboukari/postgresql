@@ -155,3 +155,6 @@ WHERE schemaname != 'pg_catalog' AND
 
 ## Manage roles & permissions
 * https://aws.amazon.com/fr/blogs/database/managing-postgresql-users-and-roles/
+
+## Connect IAM user to RDS Postgres
+* https://aws.amazon.com/fr/premiumsupport/knowledge-center/rds-postgresql-connect-using-iam/
