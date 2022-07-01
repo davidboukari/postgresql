@@ -134,6 +134,12 @@ WHERE schemaname != 'pg_catalog' AND
 ```
 
 
+```
+\! cd /mnt
+\i myfiletoexec.sql
+
+```
+
 ## Replication & Failover
 
 * https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-184/Configurer-la-replication-d-un-serveur-PostgreSQL
