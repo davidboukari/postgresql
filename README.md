@@ -29,7 +29,7 @@ psql -U postgres
 ```
 
 
-## 
+## Commands
 ```
 # list schema
 \dn
@@ -42,6 +42,25 @@ SET search_path to public, myotherschema;
 
 ```
 
+## Read Only access
+* https://aws.amazon.com/fr/blogs/database/managing-postgresql-users-and-roles/
+```
+# A role to update the user_readonly password
+CREATE ROLE postgres_update_user_pass_account WITH CREATEROLE LOGIN ENCRYPTED PASSWORD 'postgres_update_user_pass_account'
+
+# Create the role read only
+CREATE ROLE role_readonly
+GRANT CONNECT ON DATABASE mydatabase TO role_readonly
+GRANT USAGE ON SCHEMA mydatabase to role_readonly
+GRANT SELECT ON ALL TABLES IN SCHEMA mydatabase to role_readonly
+
+# Add privilege for new tables
+ALTER DEFAULT PRIVILEGES IN SCHEMA mydatabase GRANT SELECT ON TABLES to role_readonly
+
+# Create user_readonly
+CREATE USER user_readonly WITH PASSWORD 'user_readonly';
+GRANT ROLE role_readonly TO user_readonly;
+```
 
 ## Commands
 * Create a DB
