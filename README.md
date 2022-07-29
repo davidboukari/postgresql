@@ -28,6 +28,21 @@ docker run -it postgres /bin/bash
 psql -U postgres
 ```
 
+
+## 
+```
+# list schema
+\dn
+
+# set path to schema
+SET search_path to public, myotherschema;
+
+# list tables
+\dt
+
+```
+
+
 ## Commands
 * Create a DB
 ```
