@@ -1,6 +1,52 @@
 # postgresql
 
 
+## Change data directory
+```
+By default, on CentOS 7, the PostgreSQL v10 data directory is located in /var/lib/pgsql/10/data.
+
+Here’s a simple trick to easily place it somewhere else without using symbolic links.
+First of all, install PostgreSQL 10:
+
+# yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+# yum install -y postgresql10-server
+
+If you wish to place your data in (e.g.) /database/pg_data, create the directory with the good rights:
+
+# mkdir -p /database/pg_data
+# chown -R postgres:postgres /pgdata
+
+Then, customize the systemd service:
+
+# systemctl edit postgresql-10.service
+
+Add the following content:
+
+[Service]
+Environment=PGDATA=/database/pg_data
+
+This will create a /etc/systemd/system/postgresql-10.service.d/override.conf file which will be merged with the original service file.
+To check its content:
+
+# cat /etc/systemd/system/postgresql-10.service.d/override.conf
+[Service]
+Environment=PGDATA=/pgdata/10/data
+
+Reload systemd:
+
+# systemctl daemon-reload
+
+Initialize the PostgreSQL data directory:
+
+# /usr/pgsql-10/bin/postgresql-10-setup initdb
+
+Start and enable the service:
+
+# systemctl enable postgresql-10
+# systemctl start postgresql-10
+
+```
+
 ## Docker image set data dir /var/lib/postgresql/data as volume
 ```
 mkdir data
