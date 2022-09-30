@@ -2,6 +2,7 @@
 
 
 ## Change data directory
+* https://blog.tenthplanet.in/postgresql-installation-in-rhel-7-with-different-data-directory/
 ```
 By default, on CentOS 7, the PostgreSQL v10 data directory is located in /var/lib/pgsql/10/data.
 
