@@ -1,5 +1,8 @@
 # postgresql
 
+## DB sample
+* https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+* https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
 
 ## Change data directory
 * https://blog.tenthplanet.in/postgresql-installation-in-rhel-7-with-different-data-directory/
